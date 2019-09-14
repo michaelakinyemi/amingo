@@ -4,7 +4,9 @@ const mongoose =  require('mongoose');
 const app = express();
 const User = require('./models/User');
 const Post = require('./models/Post');
-const db = "mongodb+srv://atrolabs:makeithappen@cluster0-yti0i.mongodb.net/test?retryWrites=true&w=majority"
+const keys  = require ('./config/keys')
+
+const db = keys.mongoURI
 mongoose
 .connect(db,{})
 .then(()=> console.log("DB Connected"))
